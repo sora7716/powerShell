@@ -11,6 +11,8 @@ if (-not ([Security.Principal.WindowsPrincipal] `
 
 #wifiに接続(xmlファイルを読み込んで)
 netsh wlan add profile filename="$PSScriptRoot\wifiPassword.xml" user=current
+#ちょっと待つ(終了反映)
+Start-Sleep -Seconds 5
 
 # アプリのインストールするIDリスト
 $appLists = @(
@@ -19,7 +21,6 @@ $appLists = @(
     "Zoom.Zoom",
     "Microsoft.VisualStudioCode",
     "Valve.Steam",
-    "EpicGames.EpicGamesLauncher",
     "Unity.UnityHub",
     "BlenderFoundation.Blender",
     "Microsoft.VisualStudio.2022.Community",
@@ -33,6 +34,19 @@ foreach ($app in $appLists) {
     Write-Host "==================="
     winget upgrade --id $app
 }
+
+#EpicGameLauncherの更新
+$epicGameLauncherId = "EpicGames.EpicGamesLauncher"
+Write-Host "==================="
+Write-Output "更新チェック: $epicGameLauncherId"
+Write-Host "==================="
+
+#Epicを完全に止める
+Get-Process EpicGamesLauncher, EpicWebHelper -ErrorAction SilentlyContinue | Stop-Process -Force
+#ちょっと待つ(終了反映)
+Start-Sleep -Seconds 2
+#更新
+winget upgrade -e --id $epicGameLauncherId --accept-package-agreements --accept-source-agreements
 
 #Windowsアップデート
 Write-Host "==================="

@@ -10,6 +10,8 @@ if (-not ([Security.Principal.WindowsPrincipal] `
 }
 #wifiに接続(xmlファイルを読み込んで)
 netsh wlan add profile filename="$PSScriptRoot\wifiPassword.xml" user=current
+#ちょっと待つ(終了反映)
+Start-Sleep -Seconds 5
 
 Write-Host "==================="
 Write-Output "OneDriveのリンク解除"
