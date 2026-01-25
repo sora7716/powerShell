@@ -1,0 +1,10 @@
+#ちゃんと裏で動いているのか
+Get-Process TiWorker
+
+または
+
+Get-Process TrustedInstaller
+
+
+#アップデートが完了したか
+Get-HotFix -Id KB5074109

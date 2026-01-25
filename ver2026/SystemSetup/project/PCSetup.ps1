@@ -1,0 +1,113 @@
+﻿# 管理者でなければ昇格
+if (-not ([Security.Principal.WindowsPrincipal] `
+    [Security.Principal.WindowsIdentity]::GetCurrent() `
+).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+
+    Start-Process powershell.exe `
+        -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" `
+        -Verb RunAs
+    exit
+}
+#wifiに接続(xmlファイルを読み込んで)
+netsh wlan add profile filename="$PSScriptRoot\wifiPassword.xml" user=current
+
+Write-Host "==================="
+Write-Output "OneDriveのリンク解除"
+Write-Host "==================="
+#oneDriveのリンクを解除
+Stop-Process -Name OneDrive -Force
+
+Write-Host "==================="
+Write-Output "OneDriveのスタートアップの無効化"
+Write-Host "==================="
+#oneDireveのスタートアップの無効化
+Get-Process | Where-Object {$_.MainWindowTitle -like "*OneDrive*"} | Stop-Process -Force
+
+Write-Host "==================="
+Write-Output "OneDriveのアンインストール"
+Write-Host "==================="
+#oneDriveのアンインストール
+winget uninstall --id Microsoft.OneDrive
+
+Write-Host "==================="
+Write-Output "OneDriveのファイルの削除"
+Write-Host "==================="
+# oneDriveのファイルを削除
+Remove-Item "$env:LOCALAPPDATA\Microsoft\OneDrive" -Recurse -Force
+
+# アプリのインストールするIDリスト
+$appLists = @(
+    "Google.Chrome",
+    "SlackTechnologies.Slack",
+    "Zoom.Zoom",
+    "Microsoft.VisualStudioCode",
+    "Valve.Steam",
+    "EpicGames.EpicGamesLauncher",
+    "Unity.UnityHub",
+    "BlenderFoundation.Blender"
+)
+
+# アプリのインストール
+foreach ($app in $appLists) {
+    Write-Host "==================="
+    Write-Output "セットアップ中: $app"
+    Write-Host "==================="
+    winget install --id $app
+}
+#visualStudioのセットアップ
+# Visual Studio Community(最新) + Workloads をまとめて入れる
+$vsId = "Microsoft.VisualStudio.Community"
+Write-Host "==================="
+Write-Output "セットアップ中: $vsId"
+Write-Host "==================="
+
+Write-Host "==================="
+Write-Output "ワークスペースを設定: $vsId"
+Write-Host "==================="
+# Workloads
+$vsOverride = @(
+  "--passive",
+  "--norestart",
+  "--wait",
+  "--add Microsoft.VisualStudio.Workload.ManagedDesktop",
+  "--add Microsoft.VisualStudio.Workload.NativeDesktop",
+  "--add Microsoft.VisualStudio.Workload.Universal",
+  "--add Microsoft.VisualStudio.Workload.NativeGame",
+  "--add Microsoft.VisualStudio.Workload.ManagedGame"
+) -join " "
+
+#visualStudio(最新)のインストール
+winget install -e --id $vsId `
+  --accept-package-agreements --accept-source-agreements `
+  --override $vsOverride
+
+#visualStudio2022のセットアップ
+Write-Host "==================="
+Write-Output "ワークスペースを設定: visualStudio2022"
+Write-Host "==================="
+#-NoNewWindow -Waitはパワーシェル以外の所をひらかないようにする
+$installerPath = "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vs_installer.exe"
+$arguments = @(
+    "modify --installPath `"C:\Program Files\Microsoft Visual Studio\2022\Community`"",
+    "--add Microsoft.VisualStudio.Workload.ManagedDesktop",
+    "--add Microsoft.VisualStudio.Workload.NativeDesktop",
+    "--add Microsoft.VisualStudio.Workload.Universal",
+    "--add Microsoft.VisualStudio.Workload.NativeGame",
+    "--add Microsoft.VisualStudio.Workload.ManagedGame",
+    "--passive",
+    "--norestart"
+) -join " "
+Start-Process -FilePath $installerPath -ArgumentList $arguments -NoNewWindow -Wait
+
+Write-Host "==================="
+Write-Output "GSUserを追加"
+Write-Host "==================="
+#アカウントを追加
+net user GSUser "" /add
+net localgroup Users GSUser /add
+
+Write-Host "==================="
+Write-Output "ノートンのアンインストール"
+Write-Host "==================="
+#ノートンのアンインストール
+winget uninstall --id NGC --silent
