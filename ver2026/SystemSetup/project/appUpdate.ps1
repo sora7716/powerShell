@@ -16,15 +16,15 @@ Start-Sleep -Seconds 5
 
 # アプリのインストールするIDリスト
 $appLists = @(
-    "Google.Chrome",
-    "SlackTechnologies.Slack",
-    "Zoom.Zoom",
-    "Microsoft.VisualStudioCode",
-    "Valve.Steam",
-    "Unity.UnityHub",
-    "BlenderFoundation.Blender",
-    "Microsoft.VisualStudio.2022.Community",
-    "Microsoft.VisualStudio.Community"
+    "Google Chrome",
+    "Slack",
+    "Zoom Workplace",
+    "Microsoft Visual StudioCode",
+    "Steam",
+    "Unity Hub",
+    "blender",
+    "VisualStudio Community 2022",
+    "VisualStudio Community 2026"
 )
 
 # アプリのインストール
@@ -32,13 +32,13 @@ foreach ($app in $appLists) {
     Write-Host "==================="
     Write-Output "更新チェック: $app"
     Write-Host "==================="
-    winget upgrade --id $app
+    winget upgrade --name $app
 }
 
 #EpicGameLauncherの更新
-$epicGameLauncherId = "EpicGames.EpicGamesLauncher"
+$epicGameLauncherName = "Epic Games Launcher"
 Write-Host "==================="
-Write-Output "更新チェック: $epicGameLauncherId"
+Write-Output "更新チェック: $epicGameLauncherName"
 Write-Host "==================="
 
 #Epicを完全に止める
@@ -46,11 +46,11 @@ Get-Process EpicGamesLauncher, EpicWebHelper -ErrorAction SilentlyContinue | Sto
 #ちょっと待つ(終了反映)
 Start-Sleep -Seconds 2
 #更新
-winget upgrade -e --id $epicGameLauncherId --accept-package-agreements --accept-source-agreements
+winget upgrade -e --name $epicGameLauncherName --accept-package-agreements --accept-source-agreements
 
 #Windowsアップデート
 Write-Host "==================="
-Write-Host "更新チェック: WindowsUpdate"
+Write-Host "更新チェック: Windows Update"
 Write-Host "==================="
 
 #PSWindowwsUpdateをなければインストール
