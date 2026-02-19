@@ -16,15 +16,15 @@ Start-Sleep -Seconds 5
 
 # アプリのインストールするIDリスト
 $appLists = @(
-    "Google Chrome",
-    "Slack",
-    "Zoom Workplace",
-    "Microsoft Visual StudioCode",
-    "Steam",
-    "Unity Hub",
-    "blender",
-    "VisualStudio Community 2022",
-    "VisualStudio Community 2026"
+    "Google.Chrome",
+    "SlackTechnologies.Slack",
+    "Zoom.Zoom",
+    "Microsoft.VisualStudioCode",
+    "Valve.Steam",
+    "Unity.UnityHub",
+    "BlenderFoundation.Blender",
+    "Microsoft.VisualStudio.2022.Community",
+    "Microsoft.VisualStudio.Community"
 )
 
 # アプリのインストール
@@ -36,9 +36,9 @@ foreach ($app in $appLists) {
 }
 
 #EpicGameLauncherの更新
-$epicGameLauncherName = "Epic Games Launcher"
+$epicGameLauncherId = "EpicGames.EpicGamesLauncher"
 Write-Host "==================="
-Write-Output "更新チェック: $epicGameLauncherName"
+Write-Output "更新チェック: $epicGameLauncherId"
 Write-Host "==================="
 
 #Epicを完全に止める
@@ -46,7 +46,7 @@ Get-Process EpicGamesLauncher, EpicWebHelper -ErrorAction SilentlyContinue | Sto
 #ちょっと待つ(終了反映)
 Start-Sleep -Seconds 2
 #更新
-winget upgrade -e --name $epicGameLauncherName --accept-package-agreements --accept-source-agreements
+winget upgrade -e --name $epicGameLauncherId --accept-package-agreements --accept-source-agreements
 
 #Windowsアップデート
 Write-Host "==================="

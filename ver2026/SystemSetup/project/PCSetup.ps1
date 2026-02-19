@@ -44,9 +44,10 @@ $appLists = @(
     "Zoom.Zoom",
     "Microsoft.VisualStudioCode",
     "Valve.Steam",
-    "EpicGames.EpicGamesLauncher",
     "Unity.UnityHub",
-    "BlenderFoundation.Blender"
+    "BlenderFoundation.Blender",
+    "Microsoft.VisualStudio.2022.Community",
+    "Microsoft.VisualStudio.Community"
 )
 
 # アプリのインストール
