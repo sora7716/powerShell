@@ -1,4 +1,4 @@
-﻿# 管理者でなければ昇格
+﻿# 管理者でなければ管理者へ変更
 if (-not ([Security.Principal.WindowsPrincipal] `
     [Security.Principal.WindowsIdentity]::GetCurrent() `
 ).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
@@ -23,6 +23,7 @@ $appLists = @(
     "Valve.Steam",
     "Unity.UnityHub",
     "BlenderFoundation.Blender",
+    "NickeManarin.ScreenToGif",
     "Fork.Fork",
     "GitHub.GitHubDesktop",
     "Microsoft.VisualStudio.2022.Community",
