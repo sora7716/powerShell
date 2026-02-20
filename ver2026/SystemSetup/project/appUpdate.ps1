@@ -23,6 +23,8 @@ $appLists = @(
     "Valve.Steam",
     "Unity.UnityHub",
     "BlenderFoundation.Blender",
+    "Fork.Fork",
+    "GitHub.GitHubDesktop",
     "Microsoft.VisualStudio.2022.Community",
     "Microsoft.VisualStudio.Community"
 )

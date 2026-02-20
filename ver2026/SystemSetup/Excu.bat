@@ -1,3 +1,4 @@
+
 @echo off
 setlocal EnableExtensions
 
@@ -12,7 +13,7 @@ set /p number=”Ô†‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢:
 echo “ü—Í‚³‚ê‚½”Ô†: [%number%]
 echo.
 
-set "pcSetup=%~dp0project\PCSetup.ps1"
+set "pcSetup=%~dp0project\pcSetup.ps1"
 set "appUpdate=%~dp0project\appUpdate.ps1"
 
 echo pcSetup: "%pcSetup%"
