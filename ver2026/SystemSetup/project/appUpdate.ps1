@@ -22,6 +22,8 @@ $appLists = @(
     "Microsoft.VisualStudioCode",
     "Valve.Steam",
     "Unity.UnityHub",
+    "GIMP.GIMP.3",
+    "FireAlpaca.FireAlpaca",
     "BlenderFoundation.Blender",
     "NickeManarin.ScreenToGif",
     "Fork.Fork",
