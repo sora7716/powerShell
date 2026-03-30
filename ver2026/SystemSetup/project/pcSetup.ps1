@@ -51,7 +51,6 @@ $appLists = @(
     "NickeManarin.ScreenToGif",
     "Fork.Fork",
     "GitHub.GitHubDesktop",
-    "Microsoft.VisualStudio.2022.Community",
     "Microsoft.VisualStudio.Community"
 )
 
@@ -88,25 +87,7 @@ $vsOverride = @(
 winget install -e --id $vsId `
   --accept-package-agreements --accept-source-agreements `
   --override $vsOverride
-
-#visualStudio2022のセットアップ
-Write-Host "==================="
-Write-Output "ワークスペースを設定: visualStudio2022"
-Write-Host "==================="
-#-NoNewWindow -Waitはパワーシェル以外の所をひらかないようにする
-$installerPath = "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vs_installer.exe"
-$arguments = @(
-    "modify --installPath `"C:\Program Files\Microsoft Visual Studio\2022\Community`"",
-    "--add Microsoft.VisualStudio.Workload.ManagedDesktop",
-    "--add Microsoft.VisualStudio.Workload.NativeDesktop",
-    "--add Microsoft.VisualStudio.Workload.Universal",
-    "--add Microsoft.VisualStudio.Workload.NativeGame",
-    "--add Microsoft.VisualStudio.Workload.ManagedGame",
-    "--passive",
-    "--norestart"
-) -join " "
-Start-Process -FilePath $installerPath -ArgumentList $arguments -NoNewWindow -Wait
-
+  
 Write-Host "==================="
 Write-Output "Unityのインストール: 6000.0.68f1"
 Write-Host "==================="

@@ -28,7 +28,6 @@ $appLists = @(
     "NickeManarin.ScreenToGif",
     "Fork.Fork",
     "GitHub.GitHubDesktop",
-    "Microsoft.VisualStudio.2022.Community",
     "Microsoft.VisualStudio.Community"
 )
 
