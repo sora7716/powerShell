@@ -1,0 +1,9 @@
+﻿2026-05-22 11:48:11 [INFO] pcSetup.ps1 を開始しました
+2026-05-22 11:48:11 [ERROR] アカウントを追加に失敗しました。ExitCode=2
+2026-05-22 11:49:29 [INFO] Windows Update: 更新があります。インストールします。
+2026-05-22 11:49:29 [ERROR] Windows Update 処理中にエラーが発生しました。パラメーター名 'PassThru' に一致するパラメーターが見つかりません。
+2026-05-22 11:49:34 [ERROR] OneDriveのアンインストールに失敗しました。ExitCode=-1978335212
+2026-05-22 11:49:34 [ERROR] OneDriveのファイルの削除に失敗しました。ExitCode=-1978335212
+2026-05-22 11:49:35 [ERROR] Google.Chrome のインストールに失敗しました。ExitCode=-1978335189
+2026-05-22 11:49:38 [ERROR] SlackTechnologies.Slack のインストールに失敗しました。ExitCode=-1978334957
+2026-05-22 11:50:46 [INFO] Zoom.Zoom のインストールに成功しました。

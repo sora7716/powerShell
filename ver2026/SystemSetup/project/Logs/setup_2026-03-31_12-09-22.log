@@ -1,0 +1,9 @@
+﻿2026-03-31 12:09:22 [INFO] pcSetup.ps1 を開始しました
+2026-03-31 12:09:22 [INFO] 実行ユーザー: GSManager
+2026-03-31 12:09:22 [INFO] ログ保存先: C:\Users\GSManager\Documents\powerShell\ver2026\SystemSetup\SystemSetup\project\Logs\setup_2026-03-31_12-09-22.log
+2026-03-31 12:09:22 [INFO] OneDriveのリンク解除に成功しました。
+2026-03-31 12:09:22 [INFO] OneDriveのスタートアップの無効化に成功しました。
+2026-03-31 12:09:25 [ERROR] OneDriveのアンインストールに失敗しました。ExitCode=-1978335212
+2026-03-31 12:09:25 [ERROR] OneDriveのファイルの削除に失敗しました。ExitCode=-1978335212
+2026-03-31 12:09:26 [ERROR] Google.Chrome のインストールに失敗しました。ExitCode=-1978335189
+2026-03-31 12:09:27 [ERROR] SlackTechnologies.Slack のインストールに失敗しました。ExitCode=-1978335189

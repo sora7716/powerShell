@@ -11,6 +11,19 @@ if (-not ([Security.Principal.WindowsPrincipal] `
 
 #wifiに接続(xmlファイルを読み込んで)
 netsh wlan add profile filename="$PSScriptRoot\wifiPassword.xml" user=current
+
+Write-Host "==============================="
+Write-Host "アプリ更新を開始します"
+Write-Host "==============================="
+Write-Host "実行内容:"
+Write-Host "1. 管理者権限の確認"
+Write-Host "2. Wi-Fi設定の読み込み"
+Write-Host "3. アプリの更新"
+Write-Host "4. Epic Games Launcherの更新"
+Write-Host "5. Windows Updateの適用"
+Write-Host "6. 必要に応じて再起動"
+Write-Host "==============================="
+
 #ちょっと待つ(終了反映)
 Start-Sleep -Seconds 5
 

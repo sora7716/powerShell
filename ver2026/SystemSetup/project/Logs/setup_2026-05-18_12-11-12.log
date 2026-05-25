@@ -1,0 +1,24 @@
+﻿2026-05-18 12:11:12 [INFO] pcSetup.ps1 を開始しました
+2026-05-18 12:12:44 [INFO] Windows Update: 更新はありません。次の処理へ進みます。
+2026-05-18 12:12:48 [ERROR] OneDriveのアンインストールに失敗しました。ExitCode=-1978335212
+2026-05-18 12:12:48 [ERROR] OneDriveのファイルの削除に失敗しました。ExitCode=-1978335212
+2026-05-18 12:12:49 [ERROR] Google.Chrome のインストールに失敗しました。ExitCode=-1978335189
+2026-05-18 12:12:50 [ERROR] SlackTechnologies.Slack のインストールに失敗しました。ExitCode=-1978335189
+2026-05-18 12:12:52 [ERROR] Zoom.Zoom のインストールに失敗しました。ExitCode=-1978335189
+2026-05-18 12:12:53 [ERROR] Microsoft.VisualStudioCode のインストールに失敗しました。ExitCode=-1978335189
+2026-05-18 12:12:55 [ERROR] Valve.Steam のインストールに失敗しました。ExitCode=-1978335189
+2026-05-18 12:12:56 [ERROR] Unity.UnityHub のインストールに失敗しました。ExitCode=-1978335189
+2026-05-18 12:12:57 [ERROR] GIMP.GIMP.3 のインストールに失敗しました。ExitCode=-1978335189
+2026-05-18 12:12:59 [ERROR] FireAlpaca.FireAlpaca のインストールに失敗しました。ExitCode=-1978335189
+2026-05-18 12:13:00 [ERROR] BlenderFoundation.Blender のインストールに失敗しました。ExitCode=-1978335189
+2026-05-18 12:13:02 [ERROR] NickeManarin.ScreenToGif のインストールに失敗しました。ExitCode=-1978335189
+2026-05-18 12:13:03 [ERROR] Fork.Fork のインストールに失敗しました。ExitCode=-1978335189
+2026-05-18 12:13:04 [ERROR] Microsoft.VisualStudio.Community のインストールに失敗しました。ExitCode=-1978335189
+2026-05-18 12:13:04 [INFO] ワークスペースを設定に成功しました。
+2026-05-18 12:13:04 [ERROR] ワークスペースを設定に失敗しました。ExitCode=-1978335189
+2026-05-18 12:13:05 [ERROR] visualStudio(最新)のインストールに失敗しました。ExitCode=-1978335189
+2026-05-18 12:13:05 [INFO] installer = C:\Users\GSManager\Desktop\SystemSetup\SystemSetup\project\UnitySetup64-6000.0.68f1.exe
+2026-05-18 12:13:05 [INFO] installPath = C:\Unity\6000.0.68f1
+2026-05-18 12:21:59 [ERROR] Unityをインストールに失敗しました。ExitCode=-1978335189
+2026-05-18 12:21:59 [ERROR] アカウントを追加に失敗しました。ExitCode=2
+2026-05-18 12:22:01 [ERROR] ノートンのアンインストールに失敗しました。ExitCode=-1978335212
