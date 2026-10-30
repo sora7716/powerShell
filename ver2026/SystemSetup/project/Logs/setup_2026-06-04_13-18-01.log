@@ -1,0 +1,6 @@
+﻿2026-06-04 13:18:01 [INFO] pcSetup.ps1 を開始しました
+2026-06-04 13:18:01 [ERROR] アカウントを追加に失敗しました。ExitCode=2
+2026-06-04 13:19:09 [INFO] Windows Update: 更新はありません。次の処理へ進みます。
+2026-06-04 13:19:13 [ERROR] OneDriveのアンインストールに失敗しました。ExitCode=-1978335212
+2026-06-04 13:19:13 [ERROR] OneDriveのファイルの削除中に例外が発生しました。エラーパス 'C:\Users\GSManager\AppData\Local\Microsoft\OneDrive' が存在しないため検出できません。
+2026-06-04 13:19:13 [INFO] Google.Chrome を machine scope でインストールします。

@@ -1,0 +1,42 @@
+﻿2026-06-04 13:21:28 [INFO] pcSetup.ps1 を開始しました
+2026-06-04 13:21:28 [ERROR] アカウントを追加に失敗しました。ExitCode=2
+2026-06-04 13:22:07 [INFO] Windows Update: 更新はありません。次の処理へ進みます。
+2026-06-04 13:22:09 [ERROR] OneDriveのアンインストールに失敗しました。ExitCode=-1978335212
+2026-06-04 13:22:09 [ERROR] OneDriveのファイルの削除中に例外が発生しました。エラーパス 'C:\Users\GSManager\AppData\Local\Microsoft\OneDrive' が存在しないため検出できません。
+2026-06-04 13:22:09 [INFO] Google.Chrome を machine scope でインストールします。
+2026-06-04 13:22:10 [WARN] Google.Chrome の machine scope インストールに失敗しました。ExitCode=-1978335189 通常インストールを試します。
+2026-06-04 13:22:11 [ERROR] Google.Chrome の通常インストールにも失敗しました。ExitCode=-1978335189
+2026-06-04 13:22:11 [INFO] SlackTechnologies.Slack を machine scope でインストールします。
+2026-06-04 13:22:14 [WARN] SlackTechnologies.Slack の machine scope インストールに失敗しました。ExitCode=-1978334957 通常インストールを試します。
+2026-06-04 13:22:16 [ERROR] SlackTechnologies.Slack の通常インストールにも失敗しました。ExitCode=-1978335189
+2026-06-04 13:22:16 [INFO] Zoom.Zoom を machine scope でインストールします。
+2026-06-04 13:22:17 [WARN] Zoom.Zoom の machine scope インストールに失敗しました。ExitCode=-1978335189 通常インストールを試します。
+2026-06-04 13:22:18 [ERROR] Zoom.Zoom の通常インストールにも失敗しました。ExitCode=-1978335189
+2026-06-04 13:22:18 [INFO] Microsoft.VisualStudioCode を machine scope でインストールします。
+2026-06-04 13:24:11 [INFO] Microsoft.VisualStudioCode の machine scope インストールに成功しました。
+2026-06-04 13:24:11 [INFO] Valve.Steam を machine scope でインストールします。
+2026-06-04 13:24:13 [WARN] Valve.Steam の machine scope インストールに失敗しました。ExitCode=-1978335189 通常インストールを試します。
+2026-06-04 13:24:14 [ERROR] Valve.Steam の通常インストールにも失敗しました。ExitCode=-1978335189
+2026-06-04 13:24:14 [INFO] Unity.UnityHub を machine scope でインストールします。
+2026-06-04 13:24:15 [WARN] Unity.UnityHub の machine scope インストールに失敗しました。ExitCode=-1978335189 通常インストールを試します。
+2026-06-04 13:24:16 [ERROR] Unity.UnityHub の通常インストールにも失敗しました。ExitCode=-1978335189
+2026-06-04 13:24:16 [INFO] GIMP.GIMP.3 を machine scope でインストールします。
+2026-06-04 13:24:17 [WARN] GIMP.GIMP.3 の machine scope インストールに失敗しました。ExitCode=-1978335189 通常インストールを試します。
+2026-06-04 13:24:19 [ERROR] GIMP.GIMP.3 の通常インストールにも失敗しました。ExitCode=-1978335189
+2026-06-04 13:24:19 [INFO] FireAlpaca.FireAlpaca を machine scope でインストールします。
+2026-06-04 13:24:20 [WARN] FireAlpaca.FireAlpaca の machine scope インストールに失敗しました。ExitCode=-1978335189 通常インストールを試します。
+2026-06-04 13:24:21 [ERROR] FireAlpaca.FireAlpaca の通常インストールにも失敗しました。ExitCode=-1978335189
+2026-06-04 13:24:21 [INFO] BlenderFoundation.Blender を machine scope でインストールします。
+2026-06-04 13:24:22 [WARN] BlenderFoundation.Blender の machine scope インストールに失敗しました。ExitCode=-1978335189 通常インストールを試します。
+2026-06-04 13:24:23 [ERROR] BlenderFoundation.Blender の通常インストールにも失敗しました。ExitCode=-1978335189
+2026-06-04 13:24:23 [INFO] NickeManarin.ScreenToGif を machine scope でインストールします。
+2026-06-04 13:24:24 [WARN] NickeManarin.ScreenToGif の machine scope インストールに失敗しました。ExitCode=-1978335189 通常インストールを試します。
+2026-06-04 13:24:26 [ERROR] NickeManarin.ScreenToGif の通常インストールにも失敗しました。ExitCode=-1978335189
+2026-06-04 13:24:26 [INFO] Fork.Fork を machine scope でインストールします。
+2026-06-04 13:24:28 [WARN] Fork.Fork の machine scope インストールに失敗しました。ExitCode=-1978335216 通常インストールを試します。
+2026-06-04 13:24:30 [ERROR] Fork.Fork の通常インストールにも失敗しました。ExitCode=-1978335189
+2026-06-04 13:24:31 [ERROR] Visual Studio Community + Workload のインストールに失敗しました。ExitCode=-1978335189
+2026-06-04 13:24:31 [INFO] installer = C:\Users\GSManager\Documents\powerShell\ver2026\SystemSetup\project\UnitySetup64-6000.0.68f1.exe
+2026-06-04 13:24:31 [INFO] installPath = C:\Unity\6000.0.68f1
+2026-06-04 13:33:11 [ERROR] Unityをインストールに失敗しました。ExitCode=-1978335189
+2026-06-04 13:35:51 [ERROR] ノートンのアンインストールに失敗しました。ExitCode=-1978335212
