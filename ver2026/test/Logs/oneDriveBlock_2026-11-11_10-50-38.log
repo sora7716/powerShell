@@ -1,0 +1,3 @@
+﻿2026-11-11 10:50:38 [INFO] キーを作成しました: HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive
+2026-11-11 10:50:38 [INFO] 設定を確認しました: HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive\DisableFileSyncNGSC = 1
+2026-11-11 10:50:38 [INFO] 設定を確認しました: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisableOneDrive = 1

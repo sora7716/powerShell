@@ -338,6 +338,39 @@ try {
     Write-Log "OneDriveのファイルの削除中に例外が発生しました。エラー$($_.Exception.Message)" "ERROR"
 }
 
+# OneDriveの起動禁止設定（Home版向け：レジストリ編集）
+# 参考: https://shirakawaroom.com/2025/10/25/post-tips-14689/
+$oneDriveRegistrySettings = @(
+    @{ Path = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive"; Name = "DisableFileSyncNGSC" },
+    @{ Path = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer"; Name = "DisableOneDrive" }
+)
+
+foreach ($setting in $oneDriveRegistrySettings) {
+    Write-Host "==================="
+    Write-Output "レジストリエディタに$($setting.Name)を追加"
+    Write-Host "==================="
+    try {
+        # 既存キーに New-Item -Force すると他の値が消えるため、無い場合のみ作成する
+        if (-not (Test-Path $setting.Path)) {
+            New-Item -Path $setting.Path -Force | Out-Null
+            Write-Log "レジストリキーを作成しました: $($setting.Path)"
+        }
+        New-ItemProperty -Path $setting.Path -Name $setting.Name -Value 1 -PropertyType DWord -Force | Out-Null
+
+        # 書き込めたか確認
+        $value = (Get-ItemProperty -Path $setting.Path -Name $setting.Name -ErrorAction Stop).($setting.Name)
+        if ($value -eq 1) {
+            Write-Log "レジストリエディタに$($setting.Name)を追加しました: $($setting.Path)\$($setting.Name) = $value"
+        }
+        else {
+            Write-Log "$($setting.Name)の値が想定と違います: $($setting.Path)\$($setting.Name) = $value" "ERROR"
+        }
+    }
+    catch {
+        Write-Log "レジストリエディタに$($setting.Name)を追加中に例外が発生しました。エラー$($_.Exception.Message)" "ERROR"
+    }
+}
+
 # アプリのインストールするIDリスト
 $appLists = @(
     "Google.Chrome",
