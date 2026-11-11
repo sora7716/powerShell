@@ -321,11 +321,33 @@ try {
     winget uninstall --id Microsoft.OneDrive --exact --silent --accept-source-agreements
     if ($LASTEXITCODE -eq 0) {
       Write-Log "OneDriveのアンインストールに成功しました。"
+    }elseif ($LASTEXITCODE -eq -1978335212) {
+      # 0x8A150014: 該当パッケージなし（既にアンインストール済み）
+      Write-Log "OneDriveは既にアンインストールされています。"
     }else {
       Write-Log "OneDriveのアンインストールに失敗しました。ExitCode=$LASTEXITCODE" "ERROR"
     }
 }catch {
     Write-Log "OneDriveのアンインストール中に例外が発生しました。エラー$($_.Exception.Message)" "ERROR"
+}
+
+Write-Host "==================="
+Write-Output "OneDriveの起動禁止設定"
+Write-Host "==================="
+try {
+    # グループポリシー「OneDrive をファイル記憶域として使用できないようにする」に相当
+    $oneDrivePolicyKey = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive"
+    # 既存キーに New-Item -Force すると他の値が消えるため、無い場合のみ作成する
+    if (-not (Test-Path $oneDrivePolicyKey)) { New-Item -Path $oneDrivePolicyKey -Force | Out-Null }
+    New-ItemProperty -Path $oneDrivePolicyKey -Name "DisableFileSyncNGSC" -Value 1 -PropertyType DWord -Force | Out-Null
+
+    $explorerPolicyKey = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer"
+    if (-not (Test-Path $explorerPolicyKey)) { New-Item -Path $explorerPolicyKey -Force | Out-Null }
+    New-ItemProperty -Path $explorerPolicyKey -Name "DisableOneDrive" -Value 1 -PropertyType DWord -Force | Out-Null
+
+    Write-Log "OneDriveの起動禁止設定に成功しました。"
+}catch {
+    Write-Log "OneDriveの起動禁止設定中に例外が発生しました。エラー$($_.Exception.Message)" "ERROR"
 }
 
 Write-Host "==================="
